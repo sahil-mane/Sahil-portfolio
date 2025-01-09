@@ -83,7 +83,7 @@ export const PROJECTS = [
     title: "Pizza Pool",
     subtitle: "Designed and implemented the front-end user interface for ordering pizzas, tracking orders,and managing user accounts. Admin add or remove categories and menu-items",
     image: image6,
-    githubUrl:"",
+    githubUrl:"https://github.com/sahil-mane/pizza-pool",
     liveUrl:""
   }  
 ];
