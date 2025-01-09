@@ -17,7 +17,7 @@ const Cards = ({ image, title, subtitle, githubUrl, liveUrl }) => {
           >
             <FaGithub />
             {githubUrl ? (
-              <a href={liveUrl} target="_blank" rel="noopener noreferrer">
+              <a href={githubUrl} target="_blank" rel="noopener noreferrer">
                 Github
               </a>
             ) : (
