@@ -68,8 +68,8 @@ export const PROJECTS = [
     subtitle:
       "A personal portfolio website designed with React js and Tailwind css",
     image: image4,
-    githubUrl:"",
-    liveUrl:""
+    githubUrl:"https://github.com/sahil-mane/Sahil-portfolio",
+    liveUrl:"https://sahil-mane.vercel.app/"
   },
   {
     title: "Weather Dashboard",
