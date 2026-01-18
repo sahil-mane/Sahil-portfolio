@@ -1,7 +1,7 @@
 import { useState } from "react"
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -34,6 +34,8 @@ const ContactForm = () => {
     return errors;
   }
 
+  console.log
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const validationErrors = validate();
@@ -46,10 +48,14 @@ const ContactForm = () => {
       // Send email logic here
       emailjs
         .send(
-          "service_nxaaqxn",
-          "template_1mevdhj",
-          formData,
-          "RalylIeInpU3iQqdP"
+          import.meta.env.VITE_EMAILJS_SERVICE_ID,
+          import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+          {
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+          },
+          import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         )
         .then((response) => {
           console.log("SUCCESS", response.status, response.text);
@@ -72,11 +78,11 @@ const ContactForm = () => {
       <h2 className="my-8 text-center text-4xl font-semibold tracking-tighter">
         let&apos;s Connect
       </h2>
-      <motion.form 
-      initial={{opacity:0}}
-      whileInView={{opacity:1}}
-      transition={{duration:0.8,delay:1}}
-      onSubmit={handleSubmit}>
+      <motion.form
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 1 }}
+        onSubmit={handleSubmit}>
         <div className="mb-4">
           <input type="text"
             id="name"
@@ -88,10 +94,10 @@ const ContactForm = () => {
           />
           {error.name && (
             <motion.p
-            initial={{opacity:0}}
-            whileInView={{opacity:1}}
-            aria-live="polite" 
-            className="text-sm text-pink-700">{error.name}</motion.p>
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              aria-live="polite"
+              className="text-sm text-pink-700">{error.name}</motion.p>
           )}
         </div>
         <div className="mb-4">
@@ -105,14 +111,14 @@ const ContactForm = () => {
           />
           {error.email && (
             <motion.p
-            initial={{opacity:0}}
-            whileInView={{opacity:1}}
-            aria-live="polite"  
-            className="text-sm text-pink-700">{error.email}</motion.p>
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              aria-live="polite"
+              className="text-sm text-pink-700">{error.email}</motion.p>
           )}
         </div>
         <div className="mb-4">
-          <textarea 
+          <textarea
             id="message"
             name="message"
             value={formData.message}
@@ -122,15 +128,15 @@ const ContactForm = () => {
             rows="4"
           />
           {error.message && (
-            <motion.p 
-            initial={{opacity:0}}
-            whileInView={{opacity:1}}
-            aria-live="polite" 
-            className="text-sm text-pink-700">{error.message}</motion.p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              aria-live="polite"
+              className="text-sm text-pink-700">{error.message}</motion.p>
           )}
         </div>
         <button type="submit"
-        className={`mb-8 w-full rounded bg-yellow-400 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-yellow-500
+          className={`mb-8 w-full rounded bg-yellow-400 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-yellow-500
           ${isSending ? "cursor-not-allowed opacity-50" : ""}`}
           disabled={isSending}
         >

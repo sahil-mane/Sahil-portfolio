@@ -93,7 +93,7 @@ export const SKILLS = [
   {
     icon: <RiReactjsLine className="text-4xl lg:text-6xl text-cyan-400" />,
     name: "React",
-    experience: 6.5,
+    experience: 8.5,
   },
   {
     icon: <TbBrandNextjs className="text-4xl lg:text-6xl text-white" />,
@@ -103,7 +103,7 @@ export const SKILLS = [
   {
     icon: <SiMongodb className="text-4xl lg:text-6xl text-green-600" />,
     name: "MongoDB",
-    experience: 6,
+    experience: 7,
   },
   {
     icon: <DiRedis className="text-4xl lg:text-6xl text-red-600" />,
@@ -113,7 +113,7 @@ export const SKILLS = [
   {
     icon: <FaNodeJs className="text-4xl lg:text-6xl text-lime-400" />,
     name: "Node.js",
-    experience: 6,
+    experience: 7,
   },
   {
     icon: <RiTailwindCssFill className="text-4xl lg:text-6xl text-cyan-500" />,
