@@ -27,6 +27,12 @@ const Experience = () => {
     ],
     experience: [
       {
+        year: "JAN 2024 - PRESENT",
+        title: "Junior MERN Stack Developer",
+        company: "Binnys Jewellery Pvt Ltd",
+        description: "Developed a role-based web application with performance tracking and admin/sales dashboards."
+      },
+      {
         year: "JULY 2023 - MARCH 2024",
         title: "Junior Software Engineer",
         company: "Capritech Global Private Limited",
